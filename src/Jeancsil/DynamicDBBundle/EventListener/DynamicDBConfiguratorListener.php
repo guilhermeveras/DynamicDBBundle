@@ -53,7 +53,7 @@ class DynamicDBConfiguratorListener extends ContainerAware
 	 */
 	private function switchDatabase($dbName, $dbUser, $dbPass)
 	{
-		$connection = $this->container->get(sprintf('doctrine.dbal.%s_connection', 'client'));
+		$connection = $this->container->get(sprintf('doctrine.dbal.%s_connection', 'customer'));
 		$connection->close();
 
 		$refConn = new \ReflectionObject($connection);
@@ -68,6 +68,6 @@ class DynamicDBConfiguratorListener extends ContainerAware
 		$refParams->setAccessible('private');
 		$refParams->setValue($connection, $params);
 
-		$this->container->get('doctrine')->resetEntityManager('client');
+		$this->container->get('doctrine')->resetEntityManager('customer');
 	}
 }
