@@ -33,7 +33,6 @@
 		</service>
 
 		<service id="company.resolver" class="Jeancsil\DynamicDBBundle\Resolver\UrlResolver">
-			<argument type="service" id="request" />
 			<argument type="service" id="company.manager" />
 		</service>
 	</services>

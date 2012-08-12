@@ -2,18 +2,15 @@
 
 namespace Jeancsil\DynamicDBBundle\Resolver;
 
-use Symfony\Component\HttpFoundation\Request;
 use Jeancsil\DynamicDBBundle\Service\CompanyManager;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class UrlResolver
 {
-	private $request;
 	private $companyManager;
 
-	public function __construct(Request $request, CompanyManager $companyManager)
+	public function __construct(CompanyManager $companyManager)
 	{
-		$this->request = $request;
 		$this->companyManager = $companyManager;
 	}
 
