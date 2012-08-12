@@ -16,10 +16,10 @@ class DefaultController extends Controller
     {
     	$company = $this->getRequest()->attributes->get('company');
 
-    	$electors = $this->getDoctrine()->getRepository('JeancsilDynamicDBBundle:Post', 'customer')->findAll();
+    	$posts = $this->getDoctrine()->getRepository('JeancsilDynamicDBBundle:Post', 'customer')->findAll();
     	$companies = $this->getDoctrine()->getRepository('JeancsilDynamicDBBundle:Company', 'default')->findAll();
 
-    	#print_r($electors);
+    	print_r($posts);
     	print_r($companies);
 
         return array('company' => $company->getDomain());
